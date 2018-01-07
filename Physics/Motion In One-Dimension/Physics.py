@@ -5,6 +5,14 @@ class Physics:
     pass
 
 
+class ErrorHandling(Exception):
+    def __init__(self, reason):
+        self.reason = reason
+
+    def __str__(self):
+        return repr(self.reason)
+
+
 class Motion_In_One_Dimension(Physics):
 
     def __init__(self, distance=0, time=0, velocity=0):
