@@ -27,7 +27,7 @@ class Motion_In_One_Dimension(Physics):
             if self.distance is not None and self.distance > 0:
                 if self.velocity > 0:
                     # time rounded to 3 places
-                    time = round(int(self.distance / self.velocity), 3)
+                    time = round(float(self.distance / self.velocity), 3)
                     self.time = time
                     return time
                 return False
@@ -39,7 +39,7 @@ class Motion_In_One_Dimension(Physics):
         if self.distance is None or self.distance == 0:
             try:
                 if self.velocity > 0 and self.time > 0:
-                    self.distance = int(self.velocity*(self.time))
+                    self.distance = round(float(self.velocity*(self.time)), 3)
                     return self.distance
                 else:
                     return False
@@ -52,7 +52,7 @@ class Motion_In_One_Dimension(Physics):
         if self.velocity is None or self.velocity == 0:
             try:
                 if self.time != 0 and self.distance != 0:
-                    velocity = int(self.distance/(self.time))
+                    velocity = round(float(self.distance/self.time), 2)
                     self.velocity = velocity
                     return self.velocity
                 else:
@@ -121,7 +121,11 @@ class Motion_In_One_Dimension_Advanced(Motion_In_One_Dimension):
             return "Unable to find a solution"
 '''
 
+# Removed the tests because the variables have been reset to floats
+# For more accuracy. Thanks to Amaras (*_*)!....
 
+# The tests will be re-evaluated.
+'''
 def tests():
     from time import time
     now = time()
@@ -144,3 +148,4 @@ def tests():
     print("All Tests Took %10.3f seconds!" % time_took)
 
 tests()
+'''
