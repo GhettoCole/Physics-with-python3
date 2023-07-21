@@ -1,4 +1,7 @@
-from math import cos, sin, sqrt
+import tkinter as tk
+from math import cos, sin, sqrt, tan
+from tkinter import messagebox
+
 
 # The code is still buggy, later to be fixed.
 
@@ -126,10 +129,6 @@ class MotionInTwoDimensions(MotionInOneDimension):
             return round(tan(self.fy / self.fx), 3)
         raise CannotCompute("Sorry, I Cannot Compute A Solution.")
 
-
-import tkinter as tk
-from math import cos, tan
-from tkinter import messagebox
 
 class MotionSolverApp(tk.Tk):
     def __init__(self):
